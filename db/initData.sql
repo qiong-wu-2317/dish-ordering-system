@@ -8,5 +8,6 @@
 .import test_data/Dish.csv Dish
 .import test_data/Delivery_Window.csv Delivery_Window
 .import test_data/Orders.csv Orders
+.import test_data/Order_Item.csv Order_Item
 .import test_data/Delivery.csv Delivery
 .import test_data/Delivery_Route.csv Delivery_Route

@@ -19,4 +19,34 @@ sqlite3 database.sqlite
 .read initData.sql
 ```
 
-## query
+## Query
+### a query contains a join of at least three tables
+
+```
+.read db/query1.sql
+```
+
+### a query contains a subquery
+
+```
+.read db/query2.sql
+```
+
+### a query contains a group by with a having clause
+
+```
+.read db/query3.sql
+```
+
+### a query contains a complex search criterion
+
+```
+.read db/query4.sql
+```
+
+### a query contains CASE/WHEN
+
+```
+.read db/query5.sql
+```
+

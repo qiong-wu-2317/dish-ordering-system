@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS "Restaurant" (
 
 CREATE TABLE IF NOT EXISTS "Driver" (
         "driver_id"     INTEGER,
+        "driver_name"     TEXT,
         "car_model"     TEXT,
         "car_color"     TEXT,
         "driver_license"        TEXT,
@@ -39,7 +40,7 @@ CREATE TABLE IF NOT EXISTS "Driver" (
 CREATE TABLE IF NOT EXISTS "Dish" (
         "dish_id"       INTEGER,
         "restaurant_id" INTEGER,
-        "item_name"     TEXT NOT NULL,
+        "dish_name"     TEXT NOT NULL,
         "price" REAL NOT NULL DEFAULT 0,
         "introduction"  TEXT,
         PRIMARY KEY("dish_id" AUTOINCREMENT)
@@ -71,7 +72,7 @@ CREATE TABLE IF NOT EXISTS "Order_Item" (
         "quantity"      INTEGER NOT NULL,
         PRIMARY KEY("order_item_id" AUTOINCREMENT),
         FOREIGN KEY("dish_id") REFERENCES "Dish"("dish_id"),
-        FOREIGN KEY("orders_id") REFERENCES "Order"("orders_id")
+        FOREIGN KEY("orders_id") REFERENCES "Orders"("orders_id")
 );
 
 CREATE TABLE IF NOT EXISTS "Delivery" (
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS "Delivery" (
         "delivery_date" DATE NOT NULL,
         PRIMARY KEY("delivery_id" AUTOINCREMENT),
         FOREIGN KEY("driver_id") REFERENCES "Driver"("driver_id"),
-        FOREIGN KEY("orders_id") REFERENCES "Order"("orders_id")
+        FOREIGN KEY("orders_id") REFERENCES "Orders"("orders_id")
 );
 
 CREATE TABLE IF NOT EXISTS "Delivery_Route" (
