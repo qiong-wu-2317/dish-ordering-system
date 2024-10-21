@@ -95,4 +95,4 @@ CREATE TABLE "Delivery_Window" (
         "start_time"    DATE NOT NULL,
         "end_time"      DATE NOT NULL,
         PRIMARY KEY("delivery_window_id" AUTOINCREMENT)
-)
+);
