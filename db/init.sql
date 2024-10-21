@@ -46,12 +46,19 @@ CREATE TABLE IF NOT EXISTS "Dish" (
         FOREIGN KEY("restaurant_id") REFERENCES "Restaurant"("restaurant_id")
 );
 
+CREATE TABLE "Delivery_Window" (
+        "delivery_window_id"    INTEGER,
+        "start_time"    DATE NOT NULL,
+        "end_time"      DATE NOT NULL,
+        PRIMARY KEY("delivery_window_id" AUTOINCREMENT)
+);
+
 CREATE TABLE IF NOT EXISTS "Orders" (
         "orders_id"      INTEGER,
         "customer_id"   INTEGER NOT NULL,
         "order_date"    TEXT NOT NULL,
-        "delivery_window_id"    INTEGER,
         "order_status"  TEXT NOT NULL CHECK(order_status in ("Pending", "Delivery", "Done")),
+        "delivery_window_id"    INTEGER,
         PRIMARY KEY("orders_id" AUTOINCREMENT),
         FOREIGN KEY("customer_id") REFERENCES "Customer"("customer_id")
         FOREIGN KEY("delivery_window_id") REFERENCES "Delivery_Window"("delivery_window_id")
@@ -90,9 +97,3 @@ CREATE TABLE IF NOT EXISTS "Delivery_Route" (
         FOREIGN KEY("delivery_id") REFERENCES "Delivery"("delivery_id")
 );
 
-CREATE TABLE "Delivery_Window" (
-        "delivery_window_id"    INTEGER,
-        "start_time"    DATE NOT NULL,
-        "end_time"      DATE NOT NULL,
-        PRIMARY KEY("delivery_window_id" AUTOINCREMENT)
-);
