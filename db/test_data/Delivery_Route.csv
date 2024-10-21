@@ -1,0 +1,31 @@
+delivery_route_id,delivery_id,start_location,end_location,sequence,start_time,end_time
+1,12,63756 Hanson Trail,281 Sugar Junction,7,4/20/2022,12/27/2022
+2,28,2300 Steensland Trail,5000 Dwight Point,6,5/1/2022,11/13/2022
+3,4,65 Basil Court,08 Springview Circle,2,11/11/2022,2/23/2022
+4,5,77 New Castle Drive,44459 8th Lane,10,5/1/2022,11/25/2022
+5,1,05 Maryland Street,4 Fair Oaks Center,8,4/17/2022,4/3/2022
+6,27,6 Boyd Circle,98278 Blue Bill Park Parkway,6,5/22/2022,5/27/2022
+7,14,3 Westerfield Street,65 Thierer Plaza,10,5/4/2022,5/15/2022
+8,1,96 Colorado Drive,3350 Memorial Way,3,5/12/2022,4/18/2022
+9,14,26149 Fallview Place,1866 Ramsey Road,9,3/30/2022,8/18/2022
+10,16,4968 Oak Valley Junction,21582 Melrose Trail,1,10/23/2022,9/10/2022
+11,24,541 Ludington Place,5 Springs Alley,7,1/25/2022,4/25/2022
+12,23,3696 North Court,3 Manitowish Park,4,9/10/2022,4/22/2022
+13,18,5446 Sunfield Terrace,5 Thompson Junction,5,9/19/2022,12/30/2022
+14,20,8770 Rutledge Center,07 Waxwing Court,10,8/12/2022,12/12/2022
+15,30,49 Loomis Pass,72 Anthes Court,7,7/5/2022,3/30/2022
+16,8,6 Randy Crossing,2 Mcguire Court,1,7/10/2022,2/13/2022
+17,23,7 Bunker Hill Pass,82615 Coolidge Way,3,1/7/2022,3/13/2022
+18,1,99268 Texas Hill,9 Schurz Street,6,6/17/2022,7/2/2022
+19,1,66955 Scofield Plaza,0 Luster Point,2,1/15/2022,8/7/2022
+20,16,0 Pleasure Crossing,80 Schmedeman Point,4,5/27/2022,3/4/2022
+21,3,5 Everett Avenue,4238 Atwood Point,1,10/5/2022,6/14/2022
+22,28,6 Aberg Circle,74 Hallows Hill,9,1/5/2022,12/27/2022
+23,1,2 Raven Junction,79952 Melrose Avenue,4,4/26/2022,12/1/2022
+24,7,66686 Declaration Pass,4125 Northport Hill,4,11/13/2022,7/31/2022
+25,22,9 Tennessee Junction,9 Arrowood Circle,10,6/21/2022,3/3/2022
+26,10,43 Ohio Point,019 Lakeland Plaza,1,1/23/2022,10/17/2022
+27,20,60 Banding Hill,2 Fairview Trail,5,2/9/2022,1/24/2022
+28,10,337 Stang Court,052 Old Gate Plaza,5,12/14/2022,7/25/2022
+29,14,85551 Merry Junction,8 Golf Terrace,4,4/4/2022,5/15/2022
+30,14,3485 Express Lane,32052 Blue Bill Park Crossing,2,1/10/2022,7/22/2022

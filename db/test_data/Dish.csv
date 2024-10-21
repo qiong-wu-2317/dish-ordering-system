@@ -1,0 +1,51 @@
+dish_id,restaurant_id,item_name,price,introduction
+1,85,Nachos,15.38,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+2,85,Cannoli,18.18,Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+3,81,Cookie,32.95,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
+4,81,Cupcake,49.32,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+5,83,Pizza,6.62,"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+6,83,Muffin,9.44,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+7,83,Muffin,9.22,Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+8,87,Curry,7.71,"Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem."
+9,87,Pancakes,17.61,"Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+10,90,Sandwich,42.85,"Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti."
+11,83,Popcorn,28.13,"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
+12,87,Muffin,33.82,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+13,88,Soup,20.74,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
+14,81,Salad,8.03,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+15,87,Churro,48.83,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+16,89,Burger,18.69,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+17,82,Muffin,26.82,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+18,90,Pasta,37.18,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
+19,90,Brownie,28.29,Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+20,83,Churro,7.77,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+21,87,Macaron,36.52,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+22,87,Pasta,15.14,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."
+23,83,Cannoli,11.47,Phasellus in felis. Donec semper sapien a libero. Nam dui.
+24,90,Sushi,15.32,Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+25,84,Soup,24.22,In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+26,87,Taco,2.89,Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
+27,88,Ice Cream,7.76,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+28,83,Chicken,27.33,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
+29,86,Chicken,3.11,"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
+30,86,Burger,7.21,In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.
+31,85,Taco,7.33,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+32,84,Pancakes,8.83,Sed ante. Vivamus tortor. Duis mattis egestas metus.
+33,85,Hotdog,34.19,In congue. Etiam justo. Etiam pretium iaculis justo.
+34,81,Burger,42.32,Fusce consequat. Nulla nisl. Nunc nisl.
+35,84,Cookie,25.15,Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.
+36,83,Donut,12.23,In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
+37,86,Cupcake,32.52,In congue. Etiam justo. Etiam pretium iaculis justo.
+38,87,Nachos,49.83,Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.
+39,81,Muffin,5.76,"Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."
+40,82,Burger,11.92,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
+41,86,Ramen,31.27,"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+42,84,Sushi,45.24,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
+43,89,Shrimp,11.94,Phasellus in felis. Donec semper sapien a libero. Nam dui.
+44,86,Cheesecake,19.09,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+45,89,Ramen,23.46,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+46,90,Ice Cream,39.02,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+47,82,Macaron,7.8,"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
+48,90,Burger,40.35,Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+49,84,Donut,7.4,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
+50,88,Soup,48.91,Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
