@@ -1,6 +1,6 @@
 --query to see orders wanted delivery time and suggested delivery time.
 select orders_id, order_date, 
-concat(dw.start_time," to ", dw.end_time) AS wanted_window,
+dw.start_time||" to "||dw.end_time AS wanted_window,
 ( 
 	CASE
 		WHEN count(DISTINCT d.restaurant_id) <3 

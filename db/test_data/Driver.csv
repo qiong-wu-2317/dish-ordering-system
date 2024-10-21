@@ -1,11 +1,11 @@
-driver_id,driver_name,car_model,car_color,driver_license,phone_number
-91,Mikol Mullinger,GMC,Mauv,D,558-492-9470
-92,Swen Krugmann,Subaru,Teal,C,171-437-4342
-93,Adele Crommett,Mazda,Violet,B,998-598-1318
-94,Jose Condict,Kia,Crimson,C,364-374-5883
-95,Tiffany Shervil,Chrysler,Turquoise,C,953-592-8203
-96,Maryanne Minico,Maybach,Khaki,B,417-772-3711
-97,Pet Fetherston,Saab,Yellow,C,211-219-6952
-98,Sondra Purver,Mitsubishi,Green,E,913-760-8745
-99,Kean Renahan,Pontiac,Crimson,B,204-902-6699
-100,Dawn Chowne,Buick,Green,B,320-266-5764
+driver_id,driver_name,car_model,car_color,driver_license,license_plate,phone_number
+91,Cristina Zuann,Minivan,Puce,D,204-668-4796,307-338-2418
+92,Rafa Dingate,Minivan,Fuscia,D,287-406-9851,630-822-6431
+93,Martie Simoes,Truck,Indigo,E,986-146-6387,327-102-0390
+94,Jenine Do,SUV,Aquamarine,C,783-490-4162,157-619-8827
+95,Isadora Danielovitch,Sedan,Pink,D,215-728-6701,268-762-1970
+96,Leena Aguirrezabala,Minivan,Crimson,E,599-356-0160,748-414-3121
+97,Bernardo Thon,Truck,Maroon,E,482-597-2328,509-473-2874
+98,Terrell Bramsen,Sedan,Green,B,983-315-0607,521-965-9966
+99,Sarah Cantillion,SUV,Turquoise,B,692-483-7350,915-933-7358
+100,Candida Laugherane,Sedan,Red,D,801-826-4699,228-376-6730
