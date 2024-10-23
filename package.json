@@ -1,0 +1,27 @@
+{
+  "name": "dish-ordering-system",
+  "version": "1.0.0",
+  "description": "Project 1 Submission by Qiong Wu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiong-wu-2317/dish-ordering-system.git"
+  },
+  "keywords": [],
+  "author": "Qiong Wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiong-wu-2317/dish-ordering-system/issues"
+  },
+  "homepage": "https://github.com/qiong-wu-2317/dish-ordering-system#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3"
+  }
+}
