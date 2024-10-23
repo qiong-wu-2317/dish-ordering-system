@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <title>Restaurant Manager</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <%- include("../components/navBar.ejs") %>
+
+
+    <div class="container">
+      <h1>Restaurant Manager</h1>
+
+      
+      <% if (msg) { %>
+        <div class="alert alert-primary">
+          <%= msg %>
+        </div>
+      <% } %>
+
+
+      <div class="row">
+          <%- include("../components/searchBar.ejs", { action:'restaurants', query }) %>
+            <div class="row g-3">
+              <% for (let rest of restaurants) { %>
+
+                <div class="col-4">
+                  <div class="card p-1">
+                    <h5 class="card-title"><%= rest.restaurant_name %></h5>
+                    <div class="card-text">
+                      <div><%= rest.restaurant_address %></div>
+                      <div><%= rest.opening_time %></div>
+                      <div><%= rest.contact %></div>
+                      <div>
+                        <a class="btn btn-outline-primary" href="<%= '/restaurants/' + rest.restaurant_id + '/edit' %>">Edit</a>
+                        <a class="btn btn-outline-danger" href="<%= '/restaurants/' + rest.restaurant_id + '/delete' %>">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              <% } %>
+
+            <%- include("../components/pagination.ejs", { action:'restaurants', currentPage, pageSize, totalPages }) %>
+            </div>
+      </div>
+
+    </div>
+
+    <%- include("../components/footer.ejs") %>
+  </body>
+</html>

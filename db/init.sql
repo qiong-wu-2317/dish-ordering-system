@@ -21,8 +21,7 @@ CREATE TABLE IF NOT EXISTS "Restaurant" (
         "restaurant_address"    TEXT,
         "opening_time"  TEXT,
         "contact"       TEXT,
-        PRIMARY KEY("restaurant_id"),
-        FOREIGN KEY("restaurant_id") REFERENCES "User"("user_id")
+        PRIMARY KEY("restaurant_id" AUTOINCREMENT)
 );
 
 CREATE TABLE IF NOT EXISTS "Driver" (
@@ -47,7 +46,7 @@ CREATE TABLE IF NOT EXISTS "Dish" (
         FOREIGN KEY("restaurant_id") REFERENCES "Restaurant"("restaurant_id")
 );
 
-CREATE TABLE "Delivery_Window" (
+CREATE TABLE IF NOT EXISTS "Delivery_Window" (
         "delivery_window_id"    INTEGER,
         "start_time"    DATE NOT NULL,
         "end_time"      DATE NOT NULL,
