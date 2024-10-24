@@ -50,3 +50,14 @@ sqlite3 database.sqlite
 .read db/query5.sql
 ```
 
+## Application
+at project root folder
+```
+npm install
+npm start
+```
+
+visit http://localhost:3000/
+
+
+
