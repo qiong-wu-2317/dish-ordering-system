@@ -2,7 +2,6 @@ import sqlite3 from "sqlite3";
 import { open } from "sqlite";
 
 export async function getRestaurants(query, page, pageSize) {
-
   const db = await open({
     filename: "./db/database.db",
     driver: sqlite3.Database,
@@ -11,15 +10,15 @@ export async function getRestaurants(query, page, pageSize) {
   const stmt = await db.prepare(`
     SELECT * FROM Restaurant
     WHERE restaurant_name LIKE @query
-    ORDER BY opening_time
+    ORDER BY restaurant_name
     LIMIT @pageSize
     OFFSET @offset;
   `);
 
   const params = {
     "@query": "%"+ query + "%",
-    "@pageSize": pageSize,
-    "@offset": (page - 1) * pageSize,
+    "@pageSize": pageSize || 10000,
+    "@offset": ((page||1) - 1) * pageSize,
   };
 
   try {
@@ -55,8 +54,8 @@ export async function getRestaurantCount(query) {
   }
 }
 
-export async function getReferenceByID(reference_id) {
-  console.log("getReferenceByID", reference_id);
+export async function getRestaurantByID(restaurant_id) {
+  console.log("getRestaurantByID", restaurant_id);
 
   const db = await open({
     filename: "./db/database.db",
@@ -64,12 +63,12 @@ export async function getReferenceByID(reference_id) {
   });
 
   const stmt = await db.prepare(`
-    SELECT * FROM Reference
-    WHERE reference_id = @reference_id;
+    SELECT * FROM Restaurant
+    WHERE restaurant_id = @restaurant_id;
   `);
 
   const params = {
-    "@reference_id": reference_id,
+    "@restaurant_id": restaurant_id,
   };
 
   try {
@@ -80,8 +79,8 @@ export async function getReferenceByID(reference_id) {
   }
 }
 
-export async function updateReferenceByID(reference_id, ref) {
-  console.log("updateReferenceByID", reference_id, ref);
+export async function updateRestaurantByID(restaurant_id, rest) {
+  console.log("updateReferenceByID", restaurant_id, rest);
 
   const db = await open({
     filename: "./db/database.db",
@@ -89,18 +88,22 @@ export async function updateReferenceByID(reference_id, ref) {
   });
 
   const stmt = await db.prepare(`
-    UPDATE Reference
+    UPDATE Restaurant
     SET
-      title = @title,
-      published_on = @published_on
+      restaurant_name = @restaurant_name,
+      restaurant_address = @restaurant_address,
+      opening_time = @opening_time,
+      contact = @contact
     WHERE
-      reference_id = @reference_id;
+      restaurant_id = @restaurant_id;
   `);
 
   const params = {
-    "@reference_id": reference_id,
-    "@title": ref.title,
-    "@published_on": ref.published_on,
+    "@restaurant_id": restaurant_id,
+    "@restaurant_name": rest.restaurant_name,
+    "@restaurant_address": rest.restaurant_address,
+    "@opening_time": rest.opening_time,
+    "@contact": rest.contact
   };
 
   try {
@@ -111,8 +114,8 @@ export async function updateReferenceByID(reference_id, ref) {
   }
 }
 
-export async function deleteReferenceByID(reference_id) {
-  console.log("deleteReferenceByID", reference_id);
+export async function deleteRestaurantByID(restaurant_id) {
+  console.log("deleteRestaurantByID", restaurant_id);
 
   const db = await open({
     filename: "./db/database.db",
@@ -120,13 +123,13 @@ export async function deleteReferenceByID(reference_id) {
   });
 
   const stmt = await db.prepare(`
-    DELETE FROM Reference
+    DELETE FROM Restaurant
     WHERE
-      reference_id = @reference_id;
+      restaurant_id = @restaurant_id;
   `);
 
   const params = {
-    "@reference_id": reference_id,
+    "@restaurant_id": restaurant_id,
   };
 
   try {
@@ -137,20 +140,22 @@ export async function deleteReferenceByID(reference_id) {
   }
 }
 
-export async function insertReference(ref) {
+export async function insertRestaurant(rest) {
   const db = await open({
     filename: "./db/database.db",
     driver: sqlite3.Database,
   });
 
   const stmt = await db.prepare(`INSERT INTO
-    Reference(title, published_on)
-    VALUES (@title, @published_on);`);
+    Restaurant(restaurant_name, restaurant_address, opening_time, contact)
+    VALUES (@restaurant_name, @restaurant_address, @opening_time, @contact);`);
 
   try {
     return await stmt.run({
-      "@title": ref.title,
-      "@published_on": ref.published_on,
+      "@restaurant_name": rest.restaurant_name,
+      "@restaurant_address": rest.restaurant_address,
+      "@opening_time": rest.opening_time,
+      "@contact": rest.contact
     });
   } finally {
     await stmt.finalize();
@@ -158,8 +163,8 @@ export async function insertReference(ref) {
   }
 }
 
-export async function getAuthorsByReferenceID(reference_id) {
-  console.log("getAuthorsByReferenceID", reference_id);
+export async function getDishesByRestaurantID(restaurant_id) {
+  console.log("getAuthorsByReferenceID", restaurant_id);
 
   const db = await open({
     filename: "./db/database.db",
@@ -167,13 +172,12 @@ export async function getAuthorsByReferenceID(reference_id) {
   });
 
   const stmt = await db.prepare(`
-    SELECT * FROM Reference_Author
-    NATURAL JOIN Author
-    WHERE reference_id = @reference_id;
+    SELECT * FROM Dish
+    WHERE restaurant_id = @restaurant_id;
   `);
 
   const params = {
-    "@reference_id": reference_id,
+    "@restaurant_id": restaurant_id,
   };
 
   try {
@@ -184,29 +188,166 @@ export async function getAuthorsByReferenceID(reference_id) {
   }
 }
 
-export async function addAuthorIDToReferenceID(reference_id, author_id) {
-  console.log("addAuthorIDToReferenceID", reference_id, author_id);
 
-  const db = await open({
-    filename: "./db/database.db",
-    driver: sqlite3.Database,
-  });
+export async function getDishes(query, page, pageSize) {
 
-  const stmt = await db.prepare(`
-    INSERT INTO
-    Reference_Author(reference_id, author_id)
-    VALUES (@reference_id, @author_id);
-  `);
-
-  const params = {
-    "@reference_id": reference_id,
-    "@author_id": author_id,
-  };
-
-  try {
-    return await stmt.run(params);
-  } finally {
-    await stmt.finalize();
-    db.close();
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      SELECT Dish.*, Restaurant.restaurant_name FROM Dish
+      LEFT JOIN Restaurant USING(restaurant_id)
+      WHERE dish_name LIKE @query
+      ORDER BY price
+      LIMIT @pageSize
+      OFFSET @offset;
+    `);
+  
+    const params = {
+      "@query": "%"+ query + "%",
+      "@pageSize": pageSize,
+      "@offset": (page - 1) * pageSize,
+    };
+  
+    try {
+      return await stmt.all(params);
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
   }
-}
+  
+  export async function getDishCount(query) {
+  
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      SELECT COUNT(*) AS count
+      FROM Dish
+      WHERE dish_name LIKE @query
+    `);
+  
+    const params = {
+      "@query": "%"+ query + "%",
+    };
+  
+    try {
+      return (await stmt.get(params)).count;
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
+
+  export async function insertDish(res) {
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`INSERT INTO
+      Dish(dish_name, restaurant_id, price, introduction)
+      VALUES (@dish_name, @restaurant_id, @price, @introduction);`);
+  
+    try {
+      return await stmt.run({
+        "@dish_name": res.dish_name,
+        "@restaurant_id": res.restaurant_id,
+        "@price": res.price,
+        "@introduction": res.introduction
+      });
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
+
+  export async function deleteDishByID(dish_id) {
+    console.log("deleteDishByID", dish_id);
+  
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      DELETE FROM Dish
+      WHERE
+        dish_id = @dish_id;
+    `);
+  
+    const params = {
+      "@dish_id": dish_id,
+    };
+  
+    try {
+      return await stmt.run(params);
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
+
+  export async function getDishByID(dish_id) {
+    console.log("getDishByID", dish_id);
+  
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      SELECT Dish.*, Restaurant.restaurant_name FROM Dish
+      LEFT JOIN Restaurant USING(restaurant_id)
+      WHERE dish_id = @dish_id;
+    `);
+  
+    const params = {
+      "@dish_id": dish_id,
+    };
+  
+    try {
+      return await stmt.get(params);
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
+  
+  export async function updateDishByID(dish_id, dish) {
+    console.log("updateDishByID", dish_id, dish);
+  
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      UPDATE Dish
+      SET
+        restaurant_id = @restaurant_id,
+        price = @price,
+        introduction = @introduction
+      WHERE
+        dish_id = @dish_id;
+    `);
+  
+    const params = {
+      "@restaurant_id": dish.restaurant_id,
+      "@dish_id": dish_id,
+      "@price": dish.price,
+      "@introduction": dish.introduction
+    };
+  
+    try {
+      return await stmt.run(params);
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
