@@ -1,17 +1,17 @@
 # dish-ordering-system
 Project 1 Submission by Qiong Wu
 
-## Business requirement
-[Business Requirements.pdf](documents/Business Requirements.pdf)
+## Business requirements
+[Business Requirements.pdf](documents/Requirements.pdf)
 
 ## UML Class Diagram
-![alt text](documents/UML Class Diagram.png)
+![alt text](documents/UML.png)
 
 ## ERD
-![alt text](documents/ERD.png)
+![alt text](documents/ERD.jpg)
 
-## Relational Schema in at least BCNF using functional dependencies.
-[Relational Schema.pdf](documents/Relational Schema.pdf)
+## Relational Schema & at least BCNF using functional dependencies.
+[Relational Schema.pdf](documents/Schema.pdf)
 
 ## Database 
 
