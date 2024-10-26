@@ -51,7 +51,7 @@ router.get("/restaurants/:restaurant_id/delete", async (req, res, next) => {
     const restaurant_id = req.params.restaurant_id;
     try {
       let deleteResult = await db.deleteRestaurantByID(restaurant_id);
-      console.log("delete", deleteResult);
+      await db.deleteDishesByRestaurantID(restaurant_id);
   
       if (deleteResult && deleteResult.changes === 1) {
         res.redirect("/restaurants/?msg=Deleted");

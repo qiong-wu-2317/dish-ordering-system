@@ -293,6 +293,32 @@ export async function getDishes(query, page, pageSize) {
     }
   }
 
+  export async function deleteDishesByRestaurantID(restaurant_id) {
+    console.log("deleteDishesByRestaurantID", restaurant_id);
+  
+    const db = await open({
+      filename: "./db/database.db",
+      driver: sqlite3.Database,
+    });
+  
+    const stmt = await db.prepare(`
+      DELETE FROM Dish
+      WHERE
+        restaurant_id = @restaurant_id;
+    `);
+  
+    const params = {
+      "@restaurant_id": restaurant_id,
+    };
+  
+    try {
+      return await stmt.run(params);
+    } finally {
+      await stmt.finalize();
+      db.close();
+    }
+  }
+
   export async function getDishByID(dish_id) {
     console.log("getDishByID", dish_id);
   

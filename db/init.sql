@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS "User" (
         "user_id"       INTEGER,
         "login_name"    TEXT NOT NULL UNIQUE,
         "password"      TEXT NOT NULL,
-        "type"  TEXT NOT NULL CHECK(type in ("Customer", "Driver", "Restaurant")),
+        "type"  TEXT NOT NULL CHECK(type in ("Customer", "Driver")),
         PRIMARY KEY("user_id" AUTOINCREMENT)
 );
 
